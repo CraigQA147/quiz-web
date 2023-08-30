@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
+  
   "scripts": {
     "postinstall": "npm run copy-libs",
+    "build": "rimraf \"dist\" && cd src && cpx \"**/*\" ../dist",
     "copy-libs": "cpx \"node_modules/{angular/angular.js,angular-route/angular-route.js}\" src/lib -C",
     "start": "http-server src -a localhost -p 8000 -c-1 -d false --proxy http://localhost:8000?",
     "test": "karma start karma.conf.js"
@@ -25,4 +27,5 @@
     "angular": "^1.8.0",
     "angular-route": "^1.8.0"
   }
+
 }
